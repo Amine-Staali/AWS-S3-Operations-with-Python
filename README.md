@@ -19,7 +19,28 @@ import boto3
 **Role:**  
 Imports the necessary libraries for AWS S3 interaction and error handling.
 
-## 3. Establish S3 Client/Resource
+## 3. Create an S3 Bucket
+
+**Command:**
+```python
+s3 = boto3.client('s3', aws_access_key_id='YOUR_ACCESS_KEY',
+                   aws_secret_access_key='YOUR_SECRET_KEY')
+
+s3.create_bucket(Bucket='your_new_bucket_name')
+```
+**Role:**  
+Creates a new S3 bucket with the specified name.
+
+## 4. Delete an S3 Bucket
+
+**Command:**
+```python
+s3.delete_bucket(Bucket='your_bucket_name')
+```
+**Role:**  
+Deletes the specified S3 bucket. Note: The bucket must be empty before it can be deleted.
+
+## 5. Establish S3 Client/Resource
 
 **Command:**
 ```python
@@ -29,7 +50,7 @@ s3 = boto3.client('s3', aws_access_key_id='YOUR_ACCESS_KEY',
 **Role:**  
 Creates an S3 client for performing operations on S3 buckets.
 
-## 4. Upload a File to S3
+## 6. Upload a File to S3
 
 **Command:**
 ```python
@@ -38,7 +59,7 @@ s3.upload_file('local_file.txt', 'your_bucket_name', 'uploaded_file.txt')
 **Role:**  
 Uploads a file from the local system to an S3 bucket.
 
-## 5. Download a File from S3
+## 7. Download a File from S3
 
 **Command:**
 ```python
@@ -47,7 +68,7 @@ s3.download_file('your_bucket_name', 'uploaded_file.txt', 'downloaded_file.txt')
 **Role:**  
 Downloads a file from an S3 bucket to the local system.
 
-## 6. Read File Content from S3
+## 8. Read File Content from S3
 
 **Command:**
 ```python
@@ -58,7 +79,7 @@ print(data)
 **Role:**  
 Reads and displays the content of a file stored in S3.
 
-## 7. Write Content to a File in S3
+## 9. Write Content to a File in S3
 
 **Command:**
 ```python
@@ -67,7 +88,7 @@ s3.put_object(Bucket='your_bucket_name', Key='new_file.txt', Body='File content 
 **Role:**  
 Writes content to a new or existing file in S3.
 
-## 8. List Files in an S3 Bucket
+## 10. List Files in an S3 Bucket
 
 **Command:**
 ```python
