@@ -15,7 +15,6 @@ Installs the AWS SDK for Python to interact with AWS services.
 **Command:**
 ```python
 import boto3
-from botocore.exceptions import NoCredentialsError
 ```
 **Role:**  
 Imports the necessary libraries for AWS S3 interaction and error handling.
